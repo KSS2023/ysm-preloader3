@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.gradle' version '7.0.79'
+}
+
+group = 'com.example'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+minecraft {
+    mappings channel: 'official', version: '1.21.1'
+}
+
+dependencies {
+    minecraft 'net.neoforged:neoforge:21.1.197'
+}
+
+jar {
+    manifest {
+        attributes(
+            'Mod-Name': 'YSM Preloader',
+            'Mod-Version': version,
+            'Mod-Main-Class': 'com.example.Main'
+        )
+    }
+}
